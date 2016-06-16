@@ -4,9 +4,10 @@
   "name": "focus indicator",
   "description": "display focus indicator, when an intractable element is tab-ed to",
   "version": "1.0",
-
-  "browser_action": {
-    "default_icon": "icon.png"
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
   },
   "content_scripts": [
     {
