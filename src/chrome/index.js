@@ -1,5 +1,9 @@
-function displayFocusIndicator() {
-  // document.activeElement
+function addFocusIndicator(e) {
+  e.target.classList.add('focus-indicator');
 }
+document.addEventListener('focus', addFocusIndicator, true);
 
-document.body.addEventListener('keydown', displayFocusIndicator);
+function removeFocusIndicator(e) {
+  e.target.classList.remove('focus-indicator');
+}
+document.addEventListener('blur', removeFocusIndicator, true);
