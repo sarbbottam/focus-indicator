@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "focus indicator",
+  "description": "display focus indicator, when an intractable element is tab-ed to",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["index.js"]
+    }
+  ]
+}

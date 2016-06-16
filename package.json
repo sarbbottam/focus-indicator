@@ -1,0 +1,36 @@
+{
+  "name": "focus-indicator",
+  "version": "0.0.0",
+  "description": "display focus indicator, when an intractable element is tab-ed to",
+  "scripts": {
+    "test": "xo"
+  },
+  "keywords": [
+    "focus",
+    "indicator",
+    "keyboard",
+    "a11y",
+    "accessibility"
+  ],
+  "author": "Sarbbottam Bandyopadhyay <sarbbottam@gmail.com> (https://sarbbottam.github.io/)",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sarbbottam/focus-indicator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sarbbottam/focus-indicator/issues"
+  },
+  "homepage": "https://github.com/sarbbottam/focus-indicator",
+  "devDependencies": {
+    "xo": "^0.16.0"
+  },
+  "xo": {
+    "envs": [
+      "browser"
+    ],
+    "esnext": true,
+    "space": true
+  }
+}
