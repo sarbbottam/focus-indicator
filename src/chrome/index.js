@@ -13,11 +13,8 @@ function getPosition(element) {
   const scrollTop = window.pageYOffset || body.scrollTop;
   const scrollLeft = window.pageXOffset || body.scrollLeft;
 
-  const clientTop = body.clientTop || 0;
-  const clientLeft = body.clientLeft || 0;
-
-  const top  = rect.top +  scrollTop - clientTop;
-  const left = rect.left + scrollLeft - clientLeft;
+  const top  = rect.top +  scrollTop;
+  const left = rect.left + scrollLeft;
 
   return {
     top: `${Math.round(top)}px`,
