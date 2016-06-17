@@ -26,11 +26,17 @@ function displayFocusIndicator(target) {
   const dimension = getDimension(target);
   const position = getPosition(target);
 
-  div.style.height = `${dimension.height}px`;
-  div.style.width = `${dimension.width}px`;
+  const offset = 4;
 
-  div.style.top = `${position.top}px`;
-  div.style.left = `${position.left}px`;
+  const height = dimension.height + offset;
+  const width = dimension.width + offset;
+  const top = position.top - (offset / 2);
+  const left = position.left - (offset / 2);
+
+  div.style.height = `${height}px`;
+  div.style.width = `${width}px`;
+  div.style.top = `${top}px`;
+  div.style.left = `${left}px`;
 }
 
 function addFocusIndicator(e) {
