@@ -1,7 +1,7 @@
 function getDimension(element) {
   return {
-    height: `${element.offsetHeight}px`,
-    width: `${element.offsetWidth}px`
+    height: element.offsetHeight,
+    width: element.offsetWidth
   }
 }
 
@@ -17,8 +17,8 @@ function getPosition(element) {
   const left = rect.left + scrollLeft;
 
   return {
-    top: `${Math.round(top)}px`,
-    left: `${Math.round(left)}px`
+    top: Math.round(top),
+    left: Math.round(left)
   }
 }
 
@@ -26,11 +26,11 @@ function displayFocusIndicator(target) {
   const dimension = getDimension(target);
   const position = getPosition(target);
 
-  div.style.height = dimension.height;
-  div.style.width = dimension.width;
+  div.style.height = `${dimension.height}px`;
+  div.style.width = `${dimension.width}px`;
 
-  div.style.top = position.top;
-  div.style.left = position.left;
+  div.style.top = `${position.top}px`;
+  div.style.left = `${position.left}px`;
 }
 
 function addFocusIndicator(e) {
