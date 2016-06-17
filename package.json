@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "description": "display focus indicator, when an intractable element is tab-ed to",
   "scripts": {
-    "test": "xo"
+    "test": "xo",
+    "zip": "zip -r focus-indicator.zip src"
   },
   "keywords": [
     "focus",
