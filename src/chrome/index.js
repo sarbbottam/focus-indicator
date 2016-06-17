@@ -1,8 +1,12 @@
+const div = document.createElement('div');
+div.classList.add('focus-indicator');
+document.body.appendChild(div);
+
 function getDimension(element) {
   return {
     height: element.offsetHeight,
     width: element.offsetWidth
-  }
+  };
 }
 
 // http://javascript.info/tutorial/coordinates
@@ -13,13 +17,13 @@ function getPosition(element) {
   const scrollTop = window.pageYOffset || body.scrollTop;
   const scrollLeft = window.pageXOffset || body.scrollLeft;
 
-  const top  = rect.top +  scrollTop;
+  const top = rect.top + scrollTop;
   const left = rect.left + scrollLeft;
 
   return {
     top: Math.round(top),
     left: Math.round(left)
-  }
+  };
 }
 
 function displayFocusIndicator(target) {
@@ -42,15 +46,6 @@ function displayFocusIndicator(target) {
 function addFocusIndicator(e) {
   const target = e.target;
   displayFocusIndicator(target);
-  // e.target.classList.add('focus-indicator');
 }
+
 document.addEventListener('focus', addFocusIndicator, true);
-
-// function removeFocusIndicator(e) {
-//   e.target.classList.remove('focus-indicator');
-// }
-// document.addEventListener('blur', removeFocusIndicator, true);
-
-const div = document.createElement('div');
-div.classList.add('focus-indicator');
-document.body.appendChild(div);
