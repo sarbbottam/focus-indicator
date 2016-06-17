@@ -4,7 +4,7 @@
   z-index: 2147483647;
   display: inline-block;
   border-radius: 2px;
-  box-shadow: 0 0 2px 2px #50e3c2;
+  box-shadow: 0 0 2px 4px #50e3c2;
   pointer-events: none;
 }
 
