@@ -1,7 +1,7 @@
 {
   "name": "focus-indicator",
   "version": "0.0.0",
-  "description": "display focus indicator, when an intractable element is tab-ed to",
+  "description": "Display focus indicator for the active intractable element in a webpage.",
   "scripts": {
     "test": "xo",
     "zip": "zip -r focus-indicator.zip src"

@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "focus indicator",
-  "description": "display focus indicator, when an intractable element is tab-ed to",
+  "name": "Focus Indicator",
+  "description": "Display focus indicator for the active intractable element in a webpage.",
   "version": "1.0",
   "icons": {
     "16": "icons/16.png",
