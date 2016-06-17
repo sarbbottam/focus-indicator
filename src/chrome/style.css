@@ -1,4 +1,18 @@
 .focus-indicator {
-  border-radius: 2px !important;
-  box-shadow: inset 0 0 2px 2px #50e3c2 !important;
+  position: absolute;
+  /* http://www.puidokas.com/max-z-index/ */
+  z-index: 2147483647;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 0 2px 2px #50e3c2;
+  pointer-events: none;
+}
+
+/*
+  inline element's don't have height & width
+  inline element's height & width is `auto x auto`
+  so change their display to inline-block
+*/
+a {
+  display: inline-block
 }
