@@ -7,12 +7,3 @@
   box-shadow: 0 0 2px 4px #50e3c2;
   pointer-events: none;
 }
-
-/*
-  inline element's don't have height & width
-  inline element's height & width is `auto x auto`
-  so change their display to inline-block
-*/
-a {
-  display: inline-block
-}
