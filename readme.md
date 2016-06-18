@@ -7,7 +7,7 @@ Focus Indicator (focus-indicator)
 
 Display focus indicator for the active intractable element in a webpage.
 
-[![Focus Indicator for Chrome](http://i.imgur.com/m6gHC4g.png)](https://chrome.google.com/webstore/detail/heeoeadndnhebmfebjccbhmccmaoedlf/publish-delayed?hl=en-US)
+[![Focus Indicator for Chrome](http://i.imgur.com/m6gHC4g.png)](https://chrome.google.com/webstore/detail/focus-indicator/heeoeadndnhebmfebjccbhmccmaoedlf?hl=en-US)
 
 ## Screencast
 
