@@ -49,3 +49,16 @@ function addFocusIndicator(e) {
 }
 
 document.addEventListener('focus', addFocusIndicator, true);
+
+function showFocusIndicator() {
+  const target = document.activeElement;
+  displayFocusIndicator(target);
+}
+
+window.addEventListener('focus', showFocusIndicator);
+
+function hideFocusIndicator() {
+  div.style.left = '-9999px';
+}
+
+window.addEventListener('blur', hideFocusIndicator);
