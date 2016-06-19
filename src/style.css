@@ -1,8 +1,4 @@
-.focus-indicator {
-  position: absolute;
-  /* http://www.puidokas.com/max-z-index/ */
-  z-index: 2147483647;
-  border-radius: 2px;
-  box-shadow: 0 0 2px 4px #50e3c2;
-  pointer-events: none;
+:focus {
+  outline: 2px solid #50e3c2 !important;
+  outline-offset: -2px !important;
 }
