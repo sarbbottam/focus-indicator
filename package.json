@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "description": "Display focus indicator for the active intractable element in a webpage.",
   "scripts": {
+    "clean": "rimraf lib/js lib/css",
     "test": "xo",
-    "zip": "zip -r focus-indicator.zip src"
+    "prebuild": "npm run clean && npm test",
+    "build": "webpack",
+    "zip": "npm run build && zip -r focus-indicator.zip lib"
   },
   "keywords": [
     "focus",
@@ -25,11 +28,20 @@
   },
   "homepage": "https://github.com/sarbbottam/focus-indicator",
   "devDependencies": {
+    "copy-webpack-plugin": "^3.0.1",
+    "rimraf": "^2.5.2",
+    "webpack": "^1.13.1",
     "xo": "^0.16.0"
   },
   "xo": {
     "envs": [
       "browser"
+    ],
+    "globals": [
+      "chrome"
+    ],
+    "ignores": [
+      "lib/**/*"
     ],
     "esnext": true,
     "space": true

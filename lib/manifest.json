@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Focus Indicator",
+  "version": "1.0.5",
+  "description": "Display focus indicator for the active intractable element in a webpage.",
+  "author": "Sarbbottam Bandyopadhyay",
+  "homepage_url": "https://github.com/sarbbottam/focus-indicator",
+  "icons": {
+    "16": "icons/enabled/16.png",
+    "48": "icons/enabled/48.png",
+    "128": "icons/enabled/128.png"
+  },
+  "offline_enabled": true,
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon": "icons/enabled/48.png"
+  },
+  "background" : {
+    "scripts" : ["js/background.js"]
+  },
+  "web_accessible_resources": [
+    "css/main.css",
+    "js/main.js",
+    "icons/disabled/48.png"
+  ]
+}

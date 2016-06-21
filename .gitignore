@@ -18,7 +18,9 @@ test-results.xml
 ###################
 out
 dist
-example/main.js
+lib/css
+lib/icons
+lib/js
 
 # Node #
 ########
