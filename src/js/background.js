@@ -16,3 +16,11 @@ chrome.browserAction.onClicked.addListener(() => {
     });
   });
 });
+
+chrome.runtime.onInstalled.addListener(() => {
+  chrome.storage.local.set({focusIndicatorEnabled: true}, () => {});
+});
+
+chrome.runtime.onStartup.addListener(() => {
+  chrome.storage.local.set({focusIndicatorEnabled: true}, () => {});
+});
