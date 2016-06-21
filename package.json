@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Display focus indicator for the active intractable element in a webpage.",
   "scripts": {
-    "clean": "rimraf lib/js lib/css",
+    "clean": "rimraf lib/js lib/css lib/icons focus-indicator.zip",
     "test": "xo",
     "prebuild": "npm run clean && npm test",
     "build": "webpack",
