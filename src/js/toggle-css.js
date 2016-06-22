@@ -1,11 +1,13 @@
 function removeCSS() {
   const head = document.head;
   const url = chrome.extension.getURL('css/main.css');
-  const link = document.querySelector(`[href="${url}"]`);
+  const links = document.querySelectorAll(`[href="${url}"]`);
 
-  if (link) {
-    head.removeChild(link);
-  }
+  links.forEach(link => {
+    if (link) {
+      head.removeChild(link);
+    }
+  });
 }
 
 function addCSS() {

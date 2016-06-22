@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Focus Indicator",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Display focus indicator for the active intractable element in a webpage.",
   "author": "Sarbbottam Bandyopadhyay",
   "homepage_url": "https://github.com/sarbbottam/focus-indicator",
