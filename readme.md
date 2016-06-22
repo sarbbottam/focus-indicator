@@ -8,6 +8,7 @@ Focus Indicator (focus-indicator)
 Display focus indicator for the active intractable element in a webpage.
 
 ## Features / Notable characteristics
+
 - it can be easily turned on and off using the extension icon
   - either by clicking
   - or by navigating to the focus-indicator icon, using `tab` key and pressing `space`
@@ -17,6 +18,8 @@ Display focus indicator for the active intractable element in a webpage.
 - when enabled, it supersedes existing `:focus{outline: <styles>}`, if any
 - focus indicator gently animates, once, when displayed
 ![Animation - Focus Indicator Chrome extension in action](http://i.imgur.com/cVp2hlL.gif)
+
+## Installation
 
 [![Focus Indicator for Chrome](http://i.imgur.com/m6gHC4g.png)](https://chrome.google.com/webstore/detail/focus-indicator/heeoeadndnhebmfebjccbhmccmaoedlf?hl=en-US)
 
