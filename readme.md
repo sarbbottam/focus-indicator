@@ -7,6 +7,22 @@ Focus Indicator (focus-indicator)
 
 Display focus indicator for the active intractable element in a webpage.
 
+## Why?
+
+While accessing any digital interface, focus indicator, is very important.
+Focus indicator highlights the active intractable component or control.
+It is true for web pages also.
+
+By default, every browser highlights the active intractable element.
+But sometimes, web developers, suppress it, which creates the problem.
+
+For example, when accessing [abc NEWS](http://abcnews.go.com/), via keyboard, active intractable elements are not visually identifiable.
+
+[Focus Indicator](https://sarbbottam.github.io/accessibility,/javascript,/browser/extension/2016/06/17/focus-indicator-browser-extension/) extension, to the rescue.
+As the name suggests, it highlights the active intractable element in a webpage.
+
+If you prefer accessing web pages via keyboard, this extension will be super helpful.
+
 ## Features / Notable characteristics
 
 - it can be easily turned on and off using the extension icon
