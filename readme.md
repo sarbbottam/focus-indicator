@@ -49,4 +49,4 @@ I also wrote about it at [Focus Indicator - Browser(Chrome) Extension](https://s
 
 ## Contributing
 
-Please refer [Roadmap](roadmap.md) and [Contributing guidelines](contributing.md) to enhance your contribution experience.
+Please refer [Contributing guidelines](contributing.md) to enhance your contribution experience.
