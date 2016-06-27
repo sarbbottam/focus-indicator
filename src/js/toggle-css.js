@@ -22,8 +22,12 @@ function addCSS() {
 }
 
 function toggleCSS() {
-  chrome.storage.local.get('focusIndicatorEnabled', obj => {
-    if (obj.focusIndicatorEnabled) {
+  chrome.storage.local.get({
+    focusIndicator: {
+      enabled: true
+    }
+  }, obj => {
+    if (obj.focusIndicator.enabled) {
       addCSS();
     } else {
       removeCSS();
