@@ -1,32 +1,31 @@
+const getStyleNode = require('./get-style-node.js');
+
 function removeCSS() {
   const head = document.head;
-  const url = chrome.extension.getURL('css/main.css');
-  const links = document.querySelectorAll(`[href="${url}"]`);
+  const styleNodes = document.querySelectorAll('[data-ref="focus-indicator"]');
 
-  links.forEach(link => {
-    if (link) {
-      head.removeChild(link);
+  styleNodes.forEach(styleNode => {
+    if (styleNode) {
+      head.removeChild(styleNode);
     }
   });
 }
 
-function addCSS() {
+function addCSS(options) {
   const head = document.head;
-  const url = chrome.extension.getURL('css/main.css');
-  const link = document.createElement('link');
+  const styleNode = getStyleNode(options);
 
-  link.type = 'text/css';
-  link.rel = 'stylesheet';
-  link.href = url;
-  head.appendChild(link);
+  head.appendChild(styleNode);
 }
 
 function toggleCSS() {
   chrome.storage.local.get({
-    enabled: true
+    enabled: true,
+    color: '#50e3c2'
   }, options => {
     if (options.enabled) {
-      addCSS();
+      removeCSS();
+      addCSS(options);
     } else {
       removeCSS();
     }
