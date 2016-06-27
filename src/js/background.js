@@ -1,10 +1,8 @@
 chrome.browserAction.onClicked.addListener(() => {
   chrome.storage.local.get({
-      focusIndicator: {
-        enabled: true
-      }
-    }, obj => {
-    const enabled = !obj.focusIndicator.enabled;
+    enabled: true
+  }, options => {
+    const enabled = !options.enabled;
     let iconPath = '';
 
     if (enabled) {
@@ -16,9 +14,7 @@ chrome.browserAction.onClicked.addListener(() => {
     chrome.browserAction.setIcon({path: iconPath});
 
     chrome.storage.local.set({
-      focusIndicator: {
-        enabled
-      }
+      enabled
     }, () => {
       chrome.tabs.executeScript(null, {file: 'js/main.js'});
     });
@@ -27,16 +23,12 @@ chrome.browserAction.onClicked.addListener(() => {
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({
-    focusIndicator: {
-      enabled: true
-    }
+    enabled: true
   }, () => {});
 });
 
 chrome.runtime.onStartup.addListener(() => {
   chrome.storage.local.set({
-    focusIndicator: {
-      enabled: true
-    }
+    enabled: true
   }, () => {});
 });

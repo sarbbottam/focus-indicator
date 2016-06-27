@@ -1,31 +1,27 @@
 const optionsForm = document.getElementById('options-form');
-const optionsContainer = document.getElementById('options-container');
 
 function getOptionsHTML(options) {
   return `
     <input id="color" type="color"  value="${options.color}" />
+    <button type="submit">Save</button>
   `;
 }
 
-function injectOptionsHTML(obj) {
-  optionsContainer.innerHTML = getOptionsHTML(obj.focusIndicator);
+function injectOptionsHTML(options) {
+  optionsForm.innerHTML = getOptionsHTML(options);
 }
 
 function saveOptions() {
   chrome.storage.local.set({
-    focusIndicator: {
-      color: document.getElementById('color').value
-    }
+    color: document.getElementById('color').value
   }, () => {});
 }
 
 function fetchOptions() {
   chrome.storage.local.get({
-    focusIndicator: {
-      color: '#50e3c2'
-    }
+    color: '#50e3c2'
   }, injectOptionsHTML);
 }
 
-optionsForm.addEventListener('submit', saveOptions);
 document.addEventListener('DOMContentLoaded', fetchOptions);
+optionsForm.addEventListener('submit', saveOptions);

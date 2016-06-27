@@ -23,11 +23,9 @@ function addCSS() {
 
 function toggleCSS() {
   chrome.storage.local.get({
-    focusIndicator: {
-      enabled: true
-    }
-  }, obj => {
-    if (obj.focusIndicator.enabled) {
+    enabled: true
+  }, options => {
+    if (options.enabled) {
       addCSS();
     } else {
       removeCSS();
