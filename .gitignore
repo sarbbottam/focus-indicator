@@ -18,6 +18,7 @@ test-results.xml
 ###################
 out
 dist
+lib/html
 lib/css
 lib/icons
 lib/js
