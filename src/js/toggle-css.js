@@ -21,7 +21,8 @@ function addCSS(options) {
 function toggleCSS() {
   chrome.storage.local.get({
     enabled: true,
-    color: '#50e3c2'
+    color: '#50e3c2',
+    width: '2px'
   }, options => {
     if (options.enabled) {
       removeCSS();

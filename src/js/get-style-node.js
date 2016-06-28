@@ -18,7 +18,7 @@ function getStyleContent(options) {
     }
 
     :focus {
-      outline: 2px solid ${options.color} !important;
+      outline: ${options.width} solid ${options.color} !important;
       outline-offset: 0 !important;
       animation: outline-pulse 4s;
     }
