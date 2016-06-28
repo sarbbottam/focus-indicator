@@ -1,3 +1,5 @@
+const FOCUS_INDICATOR = require('./constant');
+
 const getStyleNode = require('./get-style-node.js');
 
 function removeCSS() {
@@ -20,9 +22,9 @@ function addCSS(options) {
 
 function toggleCSS() {
   chrome.storage.local.get({
-    enabled: true,
-    color: '#50e3c2',
-    width: '2px'
+    enabled: FOCUS_INDICATOR.ENABLED,
+    color: FOCUS_INDICATOR.COLOR,
+    width: FOCUS_INDICATOR.WIDTH
   }, options => {
     if (options.enabled) {
       removeCSS();

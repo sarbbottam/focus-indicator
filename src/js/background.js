@@ -1,3 +1,5 @@
+const FOCUS_INDICATOR = require('./constant');
+
 chrome.browserAction.onClicked.addListener(() => {
   chrome.storage.local.get({
     enabled: true
@@ -23,7 +25,9 @@ chrome.browserAction.onClicked.addListener(() => {
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({
-    enabled: true
+    enabled: FOCUS_INDICATOR.ENABLED,
+    color: FOCUS_INDICATOR.COLOR,
+    width: FOCUS_INDICATOR.WIDTH
   }, () => {});
 });
 

@@ -1,9 +1,11 @@
+const FOCUS_INDICATOR = require('./constant');
+
 const optionsForm = document.getElementById('options-form');
 
 function getOptionsHTML(options) {
   return `
     <input id="color" type="color"  value="${options.color}" />
-    <input id="width" type="number"  value="${options.width}" min="2" max="8"/>
+    <input id="width" type="number"  value="${options.width.replace('px', '')}" min="2" max="8"/>
     <button type="submit">Save</button>
   `;
 }
@@ -21,8 +23,8 @@ function saveOptions() {
 
 function fetchOptions() {
   chrome.storage.local.get({
-    color: '#50e3c2',
-    width: '2px'
+    color: FOCUS_INDICATOR.COLOR,
+    width: FOCUS_INDICATOR.WIDTH
   }, injectOptionsHTML);
 }
 
