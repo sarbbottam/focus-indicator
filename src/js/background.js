@@ -30,9 +30,3 @@ chrome.runtime.onInstalled.addListener(() => {
     width: FOCUS_INDICATOR.WIDTH
   }, () => {});
 });
-
-chrome.runtime.onStartup.addListener(() => {
-  chrome.storage.local.set({
-    enabled: true
-  }, () => {});
-});
