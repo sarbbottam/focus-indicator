@@ -1,6 +1,6 @@
-const toggleCSS = require('./toggle-css.js');
+const styleUtil = require('./style-util.js');
 
-toggleCSS();
+styleUtil.controlStyle();
 
-window.addEventListener('focus', toggleCSS);
-
+window.removeEventListener('focus', styleUtil.controlStyle);
+window.addEventListener('focus', styleUtil.controlStyle);

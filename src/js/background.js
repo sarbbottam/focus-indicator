@@ -18,7 +18,7 @@ chrome.browserAction.onClicked.addListener(() => {
     chrome.storage.local.set({
       enabled
     }, () => {
-      chrome.tabs.executeScript(null, {file: 'js/main.js'});
+      chrome.tabs.executeScript(null, {file: 'js/content.js'});
     });
   });
 });
