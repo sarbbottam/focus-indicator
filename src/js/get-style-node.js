@@ -3,7 +3,7 @@ function getStyleContent(options) {
     @keyframes outline-pulse {
       from {
         outline-color:  ${options.color};
-        outline-offset: -2px;
+        outline-offset: -${options.width};
       }
 
       90% {
