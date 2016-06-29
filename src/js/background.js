@@ -29,4 +29,5 @@ chrome.runtime.onInstalled.addListener(() => {
     color: FOCUS_INDICATOR.COLOR,
     width: FOCUS_INDICATOR.WIDTH
   }, () => {});
+  chrome.tabs.create({url: 'html/options.html'});
 });
