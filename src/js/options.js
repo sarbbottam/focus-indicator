@@ -1,4 +1,4 @@
-const FOCUS_INDICATOR = require('./constant');
+const FOCUS_INDICATOR = require('./constant.js');
 
 const optionsForm = document.getElementById('options-form');
 

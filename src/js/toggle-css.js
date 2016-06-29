@@ -1,5 +1,4 @@
-const FOCUS_INDICATOR = require('./constant');
-
+const FOCUS_INDICATOR = require('./constant.js');
 const getStyleNode = require('./get-style-node.js');
 
 function removeCSS() {

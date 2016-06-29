@@ -1,4 +1,4 @@
-const FOCUS_INDICATOR = require('./constant');
+const FOCUS_INDICATOR = require('./constant.js');
 
 chrome.browserAction.onClicked.addListener(() => {
   chrome.storage.local.get({
