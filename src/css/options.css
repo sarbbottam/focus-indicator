@@ -7,6 +7,7 @@
 *:after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -25,6 +26,24 @@ form {
 
 .row {
   margin-bottom: 16px;
+}
+
+.row-multiple {
+  font-size: 0;
+}
+
+.col-1-2 {
+  font-size: 16px;
+  display: inline-block;
+  width: 50%;
+}
+
+.p-s-4px {
+  padding-left: 4px;
+}
+
+.p-e-4px {
+  padding-right: 4px;
 }
 
 [type="color"] {
@@ -64,7 +83,14 @@ button {
   font-size: 20px;
   border: 0;
   height: 40px;
-  background: #238be4;
   color: white;
   border-radius: 2px;
+}
+
+.primary {
+  background: #238be4;
+}
+
+.secondary {
+  background: #3f4d58;
 }
