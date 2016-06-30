@@ -1,7 +1,5 @@
 const FOCUS_INDICATOR = require('./constant.js');
 
-const optionsForm = document.getElementById('options-form');
-
 function getOptionsHTML(options) {
   return `
     <div class="row">
@@ -24,35 +22,36 @@ function getOptionsHTML(options) {
 }
 
 function injectOptionsHTML(options) {
+  function saveOptions(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    chrome.storage.local.set({
+      color: document.getElementById('color').value,
+      width: `${document.getElementById('width').value}px`
+    }, () => {});
+  }
+
+  function resetOptions(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    document.getElementById('color').value = FOCUS_INDICATOR.COLOR;
+    document.getElementById('width').value = FOCUS_INDICATOR.WIDTH.replace('px', '');
+    saveOptions(e);
+  }
+
+  const optionsForm = document.getElementById('options-form');
   optionsForm.innerHTML = getOptionsHTML(options);
+  optionsForm.addEventListener('submit', saveOptions);
+
   const resetButton = document.getElementById('reset');
   resetButton.addEventListener('click', resetOptions);
 }
 
-function saveOptions(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  chrome.storage.local.set({
-    color: document.getElementById('color').value,
-    width: `${document.getElementById('width').value}px`
-  }, () => {});
-}
-
-function resetOptions(e) {
-  e.preventDefault();
-  e.stopPropagation();
-  document.getElementById('color').value = FOCUS_INDICATOR.COLOR;
-  document.getElementById('width').value = FOCUS_INDICATOR.WIDTH.replace('px', '');
-  saveOptions(e);
-}
-
-function fetchOptions() {
+function renderOptions() {
   chrome.storage.local.get({
     color: FOCUS_INDICATOR.COLOR,
     width: FOCUS_INDICATOR.WIDTH
   }, injectOptionsHTML);
 }
 
-document.addEventListener('DOMContentLoaded', fetchOptions);
-optionsForm.addEventListener('submit', saveOptions);
-
+document.addEventListener('DOMContentLoaded', renderOptions);
