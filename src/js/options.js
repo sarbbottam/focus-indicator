@@ -1,5 +1,19 @@
 const FOCUS_INDICATOR = require('./constant.js');
 
+function debounce(func, wait) {
+  let timeout;
+  return function () {
+    const context = this;
+    const args = arguments;
+    function later() {
+      func.apply(context, args);
+    }
+
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 function getOptionsHTML(options) {
   return `
     <div class="row-multiple">
@@ -12,6 +26,8 @@ function getOptionsHTML(options) {
         <input id="width" type="number"  value="${options.width.replace('px', '')}" min="2" max="8"/>
       </div>
     </div>
+    <p id="feedback" class="feedback feedback-hide">
+    </p>
     <div class="row-multiple">
       <div class="col col-1-2 p-e-4px">
         <button class="button primary" type="submit" id="update">Update</button>
@@ -24,35 +40,45 @@ function getOptionsHTML(options) {
 }
 
 function injectOptionsHTML(options) {
-  let color;
-  let width;
+  const optionsForm = document.getElementById('options-form');
+  optionsForm.innerHTML = getOptionsHTML(options);
 
-  function saveOptions(e) {
-    e.preventDefault();
-    e.stopPropagation();
+  const color = document.getElementById('color');
+  const width = document.getElementById('width');
+  const feedback = document.getElementById('feedback');
+
+  function saveOptions() {
     chrome.storage.local.set({
       color: color.value,
       width: `${width.value}px`
-    }, () => {});
+    }, () => {
+      feedback.innerHTML = 'Saved!';
+      feedback.classList.add('feedback-show');
+      setTimeout(() => {
+        feedback.classList.remove('feedback-show');
+        setTimeout(() => {
+          feedback.innerHTML = '';
+        }, 500);
+      }, 1000);
+    });
   }
 
-  function resetOptions(e) {
+  const debouncedSaveOptions = debounce(saveOptions, 500);
+
+  optionsForm.addEventListener('submit', e => {
+    e.preventDefault();
+    e.stopPropagation();
+    debouncedSaveOptions();
+  });
+
+  const resetButton = document.getElementById('reset');
+  resetButton.addEventListener('click', e => {
     e.preventDefault();
     e.stopPropagation();
     color.value = FOCUS_INDICATOR.COLOR;
     width.value = FOCUS_INDICATOR.WIDTH.replace('px', '');
-    saveOptions(e);
-  }
-
-  const optionsForm = document.getElementById('options-form');
-  optionsForm.innerHTML = getOptionsHTML(options);
-  optionsForm.addEventListener('submit', saveOptions);
-
-  const resetButton = document.getElementById('reset');
-  resetButton.addEventListener('click', resetOptions);
-
-  color = document.getElementById('color');
-  width = document.getElementById('width');
+    debouncedSaveOptions();
+  });
 }
 
 function renderOptions() {

@@ -18,6 +18,7 @@ body {
   width: 320px;
   margin: 0 auto;
   padding: 30px 10px;
+  position: relative;
 }
 
 form {
@@ -98,4 +99,26 @@ button {
 
 .secondary {
   background: #3f4d58;
+}
+
+.feedback {
+  background: #000;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 20px 0;
+  width: 280px;
+  margin: auto 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.feedback-show {
+  z-index: 100;
+  opacity: 1;
 }
