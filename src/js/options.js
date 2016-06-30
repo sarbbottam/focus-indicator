@@ -24,20 +24,23 @@ function getOptionsHTML(options) {
 }
 
 function injectOptionsHTML(options) {
+  let color;
+  let width;
+
   function saveOptions(e) {
     e.preventDefault();
     e.stopPropagation();
     chrome.storage.local.set({
-      color: document.getElementById('color').value,
-      width: `${document.getElementById('width').value}px`
+      color: color.value,
+      width: `${width.value}px`
     }, () => {});
   }
 
   function resetOptions(e) {
     e.preventDefault();
     e.stopPropagation();
-    document.getElementById('color').value = FOCUS_INDICATOR.COLOR;
-    document.getElementById('width').value = FOCUS_INDICATOR.WIDTH.replace('px', '');
+    color.value = FOCUS_INDICATOR.COLOR;
+    width.value = FOCUS_INDICATOR.WIDTH.replace('px', '');
     saveOptions(e);
   }
 
@@ -47,6 +50,9 @@ function injectOptionsHTML(options) {
 
   const resetButton = document.getElementById('reset');
   resetButton.addEventListener('click', resetOptions);
+
+  color = document.getElementById('color');
+  width = document.getElementById('width');
 }
 
 function renderOptions() {
