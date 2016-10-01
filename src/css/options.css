@@ -52,6 +52,14 @@ form {
   padding-right: 4px;
 }
 
+.p-r {
+  position: relative;
+}
+
+.t-a-r {
+  text-align: right;
+}
+
 [type="color"] {
   -webkit-appearance: none;
   border: none;
@@ -91,6 +99,46 @@ button {
   height: 40px;
   color: white;
   border-radius: 2px;
+}
+
+[type=checkbox] {
+  opacity: 0;
+}
+
+[type=checkbox] + label:before,
+[type=checkbox] + label:after {
+  content: '';
+  position: absolute;
+}
+
+[type=checkbox] + label:before {
+  width: 64px;
+  height: 32px;
+  background: gray;
+  border-radius: 16px;
+  top: 10px;
+  right: 0;
+}
+
+[type=checkbox]:checked + label:before {
+  background: #50e3c2;
+}
+
+[type=checkbox]:focus + label:before {
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+[type=checkbox] + label:after {
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  top: 14px;
+  right: 36px;
+}
+
+[type=checkbox]:checked + label:after {
+  right: 4px;
 }
 
 .primary {

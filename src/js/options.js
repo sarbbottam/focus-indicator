@@ -21,12 +21,12 @@ function getOptionsHTML(options) {
         <label for="color">Color</label>
         <input id="color" type="color"  value="${options.color}" />
       </div>
-      <div class="col col-1-2 p-e-4px">
+      <div class="col col-1-2 p-e-4px t-a-r">
         <label for="width">Width</label>
         <input id="width" type="number"  value="${options.width.replace('px', '')}" min="2" max="8"/>
       </div>
     </div>
-    <div>
+    <div class="p-r">
       <input id="show" type="checkbox"  ${options.show ? 'checked' : ''} />
       <label for="show">Show invisible element</label>
     </div>
