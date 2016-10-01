@@ -33,6 +33,8 @@ If you prefer accessing web pages via keyboard, this extension will be super hel
   - ![disabled focus indicator icon](src/icons/disabled/16.png) disabled focus indicator icon
 - when enabled, it supersedes existing `:focus{outline: <styles>}`, if any
 - focus indicator gently animates, once, when displayed
+- focus indicator color and width can be customized
+- focus indicator can alert the user when invisible elements are focused, if desired
 ![Animation - Focus Indicator Chrome extension in action](http://i.imgur.com/cVp2hlL.gif)
 
 ## Installation
