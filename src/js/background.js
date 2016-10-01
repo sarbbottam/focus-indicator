@@ -18,7 +18,7 @@ chrome.browserAction.onClicked.addListener(() => {
     chrome.storage.local.set({
       enabled
     }, () => {
-      chrome.tabs.executeScript(null, {file: 'js/content.js'});
+      chrome.tabs.executeScript(null, {file: 'js/background-helper.js'});
     });
   });
 });
