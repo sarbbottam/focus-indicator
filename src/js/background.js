@@ -27,7 +27,8 @@ chrome.runtime.onInstalled.addListener(() => {
   chrome.storage.local.set({
     enabled: FOCUS_INDICATOR.ENABLED,
     color: FOCUS_INDICATOR.COLOR,
-    width: FOCUS_INDICATOR.WIDTH
+    width: FOCUS_INDICATOR.WIDTH,
+    show: FOCUS_INDICATOR.SHOW
   }, () => {});
   chrome.tabs.create({url: 'html/options.html'});
 });
