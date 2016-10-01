@@ -7,6 +7,8 @@ Focus Indicator (focus-indicator)
 
 Display focus indicator for the active intractable element in a webpage.
 
+![Animation - Focus Indicator Chrome extension in action](http://i.imgur.com/cVp2hlL.gif)
+
 ## Why?
 
 While accessing any digital interface, focus indicator, is very important.
@@ -35,7 +37,7 @@ If you prefer accessing web pages via keyboard, this extension will be super hel
 - focus indicator gently animates, once, when displayed
 - focus indicator color and width can be customized
 - focus indicator can alert the user when invisible elements are focused, if desired
-![Animation - Focus Indicator Chrome extension in action](http://i.imgur.com/cVp2hlL.gif)
+![Focus Indicator Options](http://i.imgur.com/0a12Dgx.png)
 
 ## Installation
 
