@@ -45,5 +45,8 @@
     ],
     "esnext": true,
     "space": true
+  },
+  "dependencies": {
+    "is-invisible": "^0.1.0"
   }
 }
