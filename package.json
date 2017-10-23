@@ -7,7 +7,7 @@
     "test": "xo",
     "prebuild": "npm run clean && npm test",
     "build": "webpack",
-    "zip": "npm run build && zip -r focus-indicator.zip lib"
+    "zip": "npm run build && cd lib && zip -r -FS ../focus-indicator.zip *"
   },
   "keywords": [
     "focus",
