@@ -26,10 +26,6 @@ function getOptionsHTML(options) {
         <input id="width" type="number"  value="${options.width.replace('px', '')}" min="2" max="8"/>
       </div>
     </div>
-    <div class="p-r">
-      <input id="show" type="checkbox"  ${options.show ? 'checked' : ''} />
-      <label for="show">Show invisible element</label>
-    </div>
 
     <p id="feedback" class="feedback feedback-hide">
     </p>
@@ -51,14 +47,12 @@ function injectOptionsHTML(options) {
 
   const color = document.getElementById('color');
   const width = document.getElementById('width');
-  const show = document.getElementById('show');
   const feedback = document.getElementById('feedback');
 
   function saveOptions() {
     chrome.storage.local.set({
       color: color.value,
-      width: `${width.value}px`,
-      show: show.checked
+      width: `${width.value}px`
     }, () => {
       feedback.innerHTML = 'Saved!';
       feedback.classList.add('feedback-show');
@@ -85,7 +79,6 @@ function injectOptionsHTML(options) {
     e.stopPropagation();
     color.value = FOCUS_INDICATOR.COLOR;
     width.value = FOCUS_INDICATOR.WIDTH.replace('px', '');
-    show.checked = FOCUS_INDICATOR.SHOW;
     debouncedSaveOptions();
   });
 }
@@ -93,8 +86,7 @@ function injectOptionsHTML(options) {
 function renderOptions() {
   chrome.storage.local.get({
     color: FOCUS_INDICATOR.COLOR,
-    width: FOCUS_INDICATOR.WIDTH,
-    show: FOCUS_INDICATOR.SHOW
+    width: FOCUS_INDICATOR.WIDTH
   }, injectOptionsHTML);
 }
 
